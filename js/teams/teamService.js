@@ -18,9 +18,9 @@ this.addNewGame = function(gameObj){
 		}
 	}
 	
-this.getTeamData = function(team){
-	var deferred = $q.defer()
-	
-}	
+// this.getTeamData = function(team){
+// 		var deferred = $q.defer()
+// 	
+// 	}	
 
 });
