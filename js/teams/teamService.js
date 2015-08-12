@@ -28,14 +28,13 @@ this.getTeamData = function(team){
 			var losses = 0;
 			results.forEach(input, function(){
 				if(data.data.won === true){
-					wins++
+					deferred.resolve(wins++);
 				}else {
-					losses++
+					deferred.reject(losses++);
 				}
 			})
-		}
+		})
 	}	
 	
 	return deferred.promise
-	}	
 });
