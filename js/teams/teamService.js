@@ -32,9 +32,10 @@ this.getTeamData = function(team){
 				}else {
 					deferred.reject(losses++);
 				}
+				results.wins = wins;
+				results.losses = losses;
 			})
 		})
+		return deferred.promise
 	}	
-	
-	return deferred.promise
 });
