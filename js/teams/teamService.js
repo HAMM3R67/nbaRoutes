@@ -36,6 +36,9 @@ this.getTeamData = function(team){
 				results.losses = losses;
 			})
 		})
+		console.log (this.getTeamData)
+		return this.getTeamData	
 		return deferred.promise
-	}	
+	}
+	
 });
