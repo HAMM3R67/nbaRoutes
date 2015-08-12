@@ -13,14 +13,29 @@ this.addNewGame = function(gameObj){
 		}else{
 			gameObj.won = false;
 		}
-		$http.post('url', data){
+		$http.post('url', data)
 			return data;
+		}	
+		
+		
+this.getTeamData = function(team){
+		var deferred = $q.defer()
+		var url = 'https://api.parse.com/1/classes/' + team;
+		$http.get('url')
+		.then(function(data){
+			var results = data.data.results
+			var wins = 0;
+			var losses = 0;
+			results.forEach(input, function(){
+				if(data.data.won === true){
+					wins++
+				}else {
+					losses++
+				}
+			})
 		}
-	}
+	}	
 	
-// this.getTeamData = function(team){
-// 		var deferred = $q.defer()
-// 	
-// 	}	
-
+	return deferred.promise
+	}	
 });
