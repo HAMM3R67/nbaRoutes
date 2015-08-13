@@ -4,7 +4,8 @@ app.config(function($routeProvider, $httpProvider){
   $httpProvider.interceptors.push('httpRequestInterceptor');
 
   //router here
-  $routeProvider.when('/home'
+  $routeProvider
+  .when('/#/home'
     
   )
 });
