@@ -14,18 +14,18 @@ app.config(function($routeProvider, $httpProvider){
     templateUrl: 'js/teams/teamTmpl.html',
     controller: 'teamCtrl',
      resolve: {
-        teamData: function(teamService){
-          return teamService.getTeamData();
+        teamData: function(teamService, $route){
+          return teamService.getTeamData($route.current.params.team);
         } 
     }
     // image: 'images/jazz-logo.png'
   })
-  .when('/teams/losangelaslakers', {
+  .when('/teams/losangeleslakers', {
     templateUrl: 'js/teams/teamTmpl.html',
     controller: 'teamCtrl',
      resolve: {
-        teamData: function(teamService){
-          return teamService.getTeamData();
+        teamData: function(teamService, $route){
+          return teamService.getTeamData($route.current.params.team);
         } 
     }
     // image: 'images/lakers-logo.png'
@@ -34,8 +34,8 @@ app.config(function($routeProvider, $httpProvider){
     templateUrl: 'js/teams/teamTmpl.html',
     controller: 'teamCtrl',
      resolve: {
-        teamData: function(teamService){
-          return teamService.getTeamData();
+        teamData: function(teamService, $route){
+          return teamService.getTeamData($route.current.params.team);
         } 
     }
     // image: 'images/heat-logo.png'
