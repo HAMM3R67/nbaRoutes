@@ -5,17 +5,32 @@ app.config(function($routeProvider, $httpProvider){
 
   //router here
   $routeProvider
-  .when('/#/', {
-    templateUrl: '/home/homTmpl.html',
-    controller: 'homeCtrl'
+  .when('/', {
+    templateUrl: 'js/home/homeTmpl.html',
+    controller: 'homeCtrl',
+    resolve: {
+      
+    }
+    // image: 'images/nba-logo.png'
   })
-  .when('/#/teams', {
-    templateUrl: '/teams/teamTmpl.html',
-    controller: 'teamCtrl'
+  .when('/teams/utahjazz', {
+    templateUrl: 'js/teams/teamTmpl.html',
+    controller: 'teamCtrl',
+    // image: 'images/jazz-logo.png'
+  })
+  .when('/teams/losangelaslakers', {
+    templateUrl: 'js/teams/teamTmpl.html',
+    controller: 'teamCtrl',
+    // image: 'images/lakers-logo.png'
+  })
+  .when('/teams/miamiheat', {
+    templateUrl: 'js/teams/teamTmpl.html',
+    controller: 'teamCtrl',
+    // image: 'images/heat-logo.png'
   })
   .otherwise({
-    redirectTo: '/#/'
+    redirectTo: '/'
   })
     
-  )
+  
 });
