@@ -8,11 +8,6 @@ app.config(function($routeProvider, $httpProvider){
   .when('/', {
     templateUrl: 'js/home/homeTmpl.html',
     controller: 'homeCtrl',
-    // resolve: {
-    //  teamData: function(homeService){
-    //    return homeService.getListOfAllTeams();
-    //  } 
-    // }
     // image: 'images/nba-logo.png'
   })
   .when('/teams/utahjazz', {
@@ -28,11 +23,21 @@ app.config(function($routeProvider, $httpProvider){
   .when('/teams/losangelaslakers', {
     templateUrl: 'js/teams/teamTmpl.html',
     controller: 'teamCtrl',
+     resolve: {
+        teamData: function(teamService){
+          return teamService.getTeamData();
+        } 
+    }
     // image: 'images/lakers-logo.png'
   })
   .when('/teams/miamiheat', {
     templateUrl: 'js/teams/teamTmpl.html',
     controller: 'teamCtrl',
+     resolve: {
+        teamData: function(teamService){
+          return teamService.getTeamData();
+        } 
+    }
     // image: 'images/heat-logo.png'
   })
   .otherwise({
