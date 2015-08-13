@@ -8,37 +8,15 @@ app.config(function($routeProvider, $httpProvider){
   .when('/', {
     templateUrl: 'js/home/homeTmpl.html',
     controller: 'homeCtrl',
-    // image: 'images/nba-logo.png'
   })
-  .when('/teams/utahjazz', {
+  .when('/teams/:teams', {
     templateUrl: 'js/teams/teamTmpl.html',
     controller: 'teamCtrl',
      resolve: {
         teamData: function(teamService, $route){
           return teamService.getTeamData($route.current.params.team);
         } 
-    }
-    // image: 'images/jazz-logo.png'
-  })
-  .when('/teams/losangeleslakers', {
-    templateUrl: 'js/teams/teamTmpl.html',
-    controller: 'teamCtrl',
-     resolve: {
-        teamData: function(teamService, $route){
-          return teamService.getTeamData($route.current.params.team);
-        } 
-    }
-    // image: 'images/lakers-logo.png'
-  })
-  .when('/teams/miamiheat', {
-    templateUrl: 'js/teams/teamTmpl.html',
-    controller: 'teamCtrl',
-     resolve: {
-        teamData: function(teamService, $route){
-          return teamService.getTeamData($route.current.params.team);
-        } 
-    }
-    // image: 'images/heat-logo.png'
+      }
   })
   .otherwise({
     redirectTo: '/'
