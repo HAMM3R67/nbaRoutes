@@ -1,7 +1,5 @@
 var app = angular.module('nbaRoutes');
 
-app.controller('teamCtrl', function($scope, $routeParams, teamService){
-	$scope.teamData = function(){
-		return teamService.getListOfAllTeams
-	};
+app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData){
+	$scope.teamData = teamService.getTeamData
 });

@@ -1,9 +1,9 @@
-var app = angular.module('nbaRoutes')
+var app = angular.module('nbaRoutes');
 
-app.service('TeamDataService', function($q, $timeout) {
+app.service('teamService', function($q, $timeout) {
 
     var teamData = {
-        lakers: [
+        losangelaslakers: [
             {
                 "createdAt": "2015-06-08T22:31:17.477Z",
                 "homeTeam": "losangeleslakers",
@@ -300,7 +300,7 @@ app.service('TeamDataService', function($q, $timeout) {
                 "opponentScore": "2222222",
             }
         ],
-        heat: [
+        miamiheat: [
             {
                 "createdAt": "2015-06-08T22:31:51.760Z",
                 "homeTeam": "miamiheat",
@@ -602,7 +602,7 @@ app.service('TeamDataService', function($q, $timeout) {
                 "opponentScore": "313333",
             }
         ],
-        jazz: [
+        utahjazz: [
             {
                 "createdAt": "2015-06-08T22:31:04.922Z",
                 "homeTeam": "utahjazz",
