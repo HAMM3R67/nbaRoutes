@@ -5,7 +5,17 @@ app.config(function($routeProvider, $httpProvider){
 
   //router here
   $routeProvider
-  .when('/#/home'
+  .when('/#/', {
+    templateUrl: '/home/homTmpl.html',
+    controller: 'homeCtrl'
+  })
+  .when('/#/teams', {
+    templateUrl: '/teams/teamTmpl.html',
+    controller: 'teamCtrl'
+  })
+  .otherwise({
+    redirectTo: '/#/'
+  })
     
   )
 });
